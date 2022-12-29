@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color:rgb(24, 133, 9);
+    height: 70px;
+    width: 100%;
+}
+.nav-content{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+}
+.nav-title{
+   padding-top: 15px;
+    font-family: 'Concert One', cursive;
+    font-size: xx-large;
+}
+.logo{
+    height: 60px;
+    padding-top: 5px; 
+    width: 50px;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 70px;
+    
+}
+.container .con1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 60px;
+}
+#content img{
+    height: 90px;
+    width: 90px;
+    color: black;
+}
+.fa-circle-plus{
+    color:rgb(24, 133, 9) ;
+}
+.fa-circle-minus{
+    color: rgb(227, 1, 1);
+}
+.nes{
+    height: 10px;
+	width: 300px;
+    border-radius: 100px;
+}
+#nes1 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 15px;
+    background-color: #e69a27;
+    width: 300px;
+    margin: 0 auto;
+    height: 100px;
+    border-radius: 100px 100px 10px 10px;
+    box-shadow:0px -8px #b9740d ;
+}
+#nes1 .jljlan{
+    height: 13px;
+    width: 5px;
+    border-radius: 90px;
+    background-color: black;
+}
+#nes1 #j1{rotate: 40deg;}
+#nes1 #j2{rotate: 40deg;}
+#nes1 #j3{rotate: 40deg;}
+#nes1 #j4{rotate: -40deg;}
+#nes1 #j5{rotate: -40deg;}
+#nes1 #j6{rotate: -40deg;}
+#nes2{
+    background-color: #e69a27;
+    width: 300px;
+    margin: 0px auto;
+    height: 50px;
+    border-radius: 10px 10px 50px 50px;
+    box-shadow:0px 8px #b9740d ;
+}
+
+#cheese{
+    background-color: rgb(236, 238, 79);
+}
+#khos{
+    background-color: rgb(14, 92, 10);
+}
+#meat1{
+    background-color: rgb(130, 77, 9);
+    height: 30px;
+}
+#tomato1{
+    background-color: rgb(227, 1, 1);
+    height: 15px;
+}
+#khos1{
+    background-color: rgb(24, 133, 9);
+
+}
+#cheese1{
+    background-color: rgb(236, 238, 79);
+    height: 5px;
+}
+#besla1{
+    background-color: rgb(141, 10, 93);
+    height: 10px;
+}
+#kornicho1{
+    background-color: rgb(22, 77, 31);
+}
+
