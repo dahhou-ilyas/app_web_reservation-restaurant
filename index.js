@@ -1,11 +1,22 @@
 const express=require('express');
+let nodemailer=require('nodemailer')
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose')
 const Reservation=require('./models/reservation')
 const app=express();
 const path = require('path');
 const Port=3000;
-
+//créer un transport
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'gogo.great2020@gmail.com',
+      pass: 'jtdryxvakudsaozt'
+    }
+  });
+  
 //
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
@@ -32,11 +43,25 @@ app.get('/',(req,res)=>{
 
 app.post('/',(req,res)=>{
     let data=req.body
+    let mailOptions={
+        from:'gogo.great2020@gmail.com',
+        to:data.email,
+        subject:'reservation dans LOS POLLOS',
+        text:`votre réservation est validée monsieur
+        ${data.nom} ${data.prenom} le ${data.date}`
+    }
     const reservation=new Reservation(data)
     console.log(data);
     reservation.save()
     .then((result)=>{
         res.sendFile(path.join(__dirname+'/views/index.html'))
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
     }).catch((err)=>{
         console.log(err);
     })
