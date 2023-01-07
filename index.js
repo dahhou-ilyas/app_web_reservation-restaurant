@@ -1,52 +1,53 @@
-const express=require('express');
-let nodemailer=require('nodemailer')
-const bodyParser=require('body-parser');
-const mongoose=require('mongoose')
-const Reservation=require('./models/reservation')
-const app=express();
-const path = require('path');
-const Port=3000;
-//créer un transport
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'gogo.great2020@gmail.com',
-      pass: 'jtdryxvakudsaozt'
-    }
-  });
+ const express=require('express');
+ let nodemailer=require('nodemailer')
+ const bodyParser=require('body-parser');
+ const mongoose=require('mongoose')
+ const Reservation=require('./models/reservation')
+ const app=express();
+ const path = require('path');
+ const Port=3000;
+ //créer un transport
+ var transporter = nodemailer.createTransport({
+     service: 'gmail',
+     port: 465,
+     secure: true,
+     auth: {
+       user: 'gogo.great2020@gmail.com',
+       pass: 'jtdryxvakudsaozt'
+     }
+   });
   
-//
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+ //
+ app.use(bodyParser.json())
+ app.use(bodyParser.urlencoded({extended:true}))
 
-//connecter avec mongoose
-mongoose.connect("mongodb+srv://ilyas:ilyas@cluster0.eprpclj.mongodb.net/reservation?retryWrites=true&w=majority",{useNewUrlParser: true})
-  .then( result => {
-    console.log("ilyas");
-  })
-  .catch( err => {
-    console.log(err);
-  }); 
+ //connecter avec mongoose
+ mongoose.connect("mongodb+srv://ilyas:ilyas@cluster0.eprpclj.mongodb.net/reservation?retryWrites=true&w=majority",{useNewUrlParser: true})
+   .then( result => {
+     console.log("la connection est bien établie");
+   })
+   .catch( err => {
+     console.log(err);
+   }); 
 
-// lire les fichier static
+// // lire les fichier static
 app.use(express.static('public'));
 
-//les routes 
-app.get('/form',(req,res)=>{
-    res.sendFile(path.join(__dirname+'/views/form.html'))
-})
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname+'/views/index.html'))
-})
+ //les routes 
+ app.get('/menu',(req,res)=>{
+     res.sendFile(path.join(__dirname+'/views/menu.html'))
+ })
+ app.get('/',(req,res)=>{
+     res.sendFile(path.join(__dirname+'/views/index.html'))
+ })
 
-app.post('/',(req,res)=>{
+ app.post('/',(req,res)=>{
     let data=req.body
+    console.log(data);
     let mailOptions={
         from:'gogo.great2020@gmail.com',
         to:data.email,
-        subject:'reservation dans LOS POLLOS',
+        subject:'reservation à LOS POLLOS HERMANOS',
         text:`votre réservation est validée monsieur
         ${data.nom} ${data.prenom} le ${data.date}`
     }
@@ -66,8 +67,9 @@ app.post('/',(req,res)=>{
         console.log(err);
     })
 })
-  
-  
-  app.listen(Port,()=>{
-      console.log('app listen in 3000');
-  })
+
+
+
+app.listen(Port,()=>{
+    console.log('app listen in 3000');
+})

@@ -21,7 +21,7 @@
           <div class="navigation-bar">
               <ul>
                   <li class="active"><a href="/">Home<span class="underline"></span></a></li>
-                  <li><a href="#menu">Menu<span class="underline"></span></a></li>
+                  <li><a href="/menu">Menu<span class="underline"></span></a></li>
                   <li><a href="#reservation">Reservations<span class="underline"></span></a></li>
                   <li><a href="#contact">Contact<span class="underline"></span></a></li>  
               </ul>
@@ -79,7 +79,7 @@
           <h2>Discover</h2><br>
           <h3>Menu</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis nunc vel est aliquam accumsan. Curabitur et viverra justo. Mauris non dapibus lectus. Nulla placerat convallis suscipit. Etiam malesuada lorem non arcu sollicitudin blandit.</p>
-          <div><a class="xxxx" href="#">View The Full Menu</a></div>
+          <div><a class="xxxx" href="menu.html">View The Full Menu</a></div>
       </div>
   </div>
 
@@ -96,7 +96,18 @@
           <h2>welcome</h2><br>
           <h3>Again</h3> 
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis nunc vel est aliquam accumsan. Curabitur et viverra justo. Mauris non dapibus lectus. Nulla placerat convallis suscipit.</p>
-          <div><a class="xxxx" href="/form">Make a Reservation</a></div>
+          <div><a id="reserver" class="xxxx" href="#popup-form">Make a Reservation</a></div>
+      </div>
+      <div id="popup-form">
+        <form action="http://localhost:3000/" method="post">
+            <h2 class="form__title">Reservation</h2>
+            <input type="text" placeholder="nom" name="nom" class="input" />
+            <input type="text" placeholder="prenom" name="prenom" class="input" />
+            <input type="number" placeholder="nombre de tables " name="TABLE" class="input">
+            <input type="email" placeholder="Email" name="email" class="input" />
+            <input type="date" placeholder="date" name="date" class="input"/>
+            <input type="submit" id="btnreserve">
+          </form>
       </div>
       <div class="image-container">
           <div class="image image1">
@@ -110,7 +121,7 @@
 
   <footer>
       <div class="text">
-          <h2>ABOUT LOS POLLOS</h2>
+          <h2>About los pollos</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis nunc vel est aliquam accumsan. Curabitur et viverra justo. Mauris non dapibus lectus. Nulla placerat convallis suscipit.</p>
       </div>
       <div class="contact-container" id="contact">
