@@ -1,0 +1,375 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto:ital@1&display=swap');
+:root{
+    --couleur-principal:#4B5D67;
+    --coleur-secondaire:#DBD8E3;
+    --couleur-navbar:#393E46;
+    --coleur-footer:#222831;
+    --coleur-h3:#000;
+    --couleur-para:#515151;
+}
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 12px; 
+    background-color: var(--coleur-secondaire);
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img {
+    max-width: 100%;
+   
+}
+h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 90px;
+    font-weight: normal;
+    margin: 0 0 -55px;
+}
+h1, h3 {
+    font-family:  'Roboto', sans-serif;
+    font-size: 47px;
+    font-weight: bold;
+    letter-spacing: 9.4px;
+    margin: 0 0 15px;
+}
+p {
+    color: var(--couleur-para);
+    line-height: 27px;
+}
+.xxxx {
+    border-bottom: 2px solid var(--couleur-principal);
+    padding-bottom: 4px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+
+
+.xxxx, h2,.navigation-bar a:hover,.links a:hover{
+    color: var(--couleur-principal);
+}
+.underline, button:hover{
+    background-color: var(--couleur-principal);
+}
+.text, footer{
+    text-align: center;
+}
+header nav,.navigation-bar ul, .about-us, .reservation, .about-us .image-container, .reservation .image-container, .menu,.menu-image-container, footer .contact-container {
+    display: flex;
+}
+.burger,.burger span,.navigation-bar, .navigation-bar ul,.links a{
+    transition: .3s;
+}
+header,.burger span, header .navigation-bar a, header .text,.recipes,.fixed-image .text{
+    position: relative;
+}
+nav .burger,  .navigation-bar .underline,.recipes .text{
+    position: absolute;
+}
+.recipes .text, .fixed-image .text{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+header nav,a:hover .underline,li.active .underline{
+    width: 100%;
+}
+button, .burger,img{
+    cursor: pointer;
+}
+ nav.active, header nav.active .burger.active span, header nav .burger span,button{
+    background-color: var(--coleur-secondaire);
+}
+h1, h3, header .navigation-bar a, header .text span, footer .text p,.links a{
+    color: var(--coleur-secondaire);
+}
+header nav, header .navigation-bar.show, header .navigation-bar a:hover .underline, header .navigation-bar li.active .underline{
+    left: 0;
+}
+header .text span, footer .social-media .links a{
+    display: inline-block;
+}
+
+header {
+    height: calc(100vh - 22px);
+    background-size: cover;
+    background: url("https://cache.cosmopolitan.fr/data/photo/w660_c17/4j/thecafebis.jpg") fixed bottom no-repeat;
+    -webkit-background-size: cover;
+    padding: 20px 70px;
+}
+header nav {
+    position: fixed;
+    top: 0;
+    padding: 36px 36px 20px;
+    z-index: 1;
+}
+header nav .burger {
+    display: none;
+    top: 26px;
+    left: 20px;
+    z-index: 2;
+}
+
+header nav.active .burger span {
+    background-color: var(--coleur-h3);
+}
+header nav .burger.active {
+    left: 25%;
+}
+header nav .burger.active .first {
+    top: 16px;
+    transform: rotate(-45deg);
+}
+header nav .burger.active .last {
+    top: 0;
+    transform: rotate(45deg);
+}
+header nav .burger.active:hover span{
+    background-color: var(--couleur-principal);
+}
+header nav .burger .hide {
+    transition: 0s;
+    visibility: hidden;
+}
+header nav .burger span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 40px;
+}
+header nav .burger span:not(:last-of-type) {
+    margin-bottom: 6px;
+}
+
+header .navigation-bar.show {
+    width: 35%;
+    border-radius: 0 0% 20% 0;
+}
+header .navigation-bar ul li {
+    flex: 1;
+    padding: 0 10px;
+}
+header .navigation-bar a {
+    text-decoration: none;
+    transition: all .5s;
+    font-size: 16px;
+}
+header nav.active .navigation-bar a {
+    color: var(--coleur-h3);
+}
+header nav.active .navigation-bar.show a {
+    color: var(--coleur-secondaire);
+}
+header .navigation-bar .underline {
+    height: 2px;
+    left: 50%;
+    bottom: -4px;
+    transition: all .3s;
+    display: block;
+}
+header .text {
+    top: 24%;
+}
+header .text h1 {
+    margin-bottom: 0;
+}
+button{
+    border: none;
+    padding: 9px 18px;
+    letter-spacing: 2.4px;
+    font-size: 12px;
+    border-radius: 3px;
+    outline: none;
+}
+.about-us, .reservation {
+    padding: 60px;
+}
+.about-us .text, .reservation .text {
+    flex: 50%;
+    padding: 40px 52px 0 0;
+}
+.about-us .text h3, .reservation .text h3 {
+    color:var(--coleur-h3)
+}
+
+.about-us .image-container, .reservation .image-container {
+    flex: 50%;
+}
+.about-us .image, .reservation .image {
+    margin-left: 20px;
+}
+.recipes .image {
+    height: 350px;
+    background: url("http://couteaux-et-tirebouchons.com/wp-content/uploads/2015/10/restaurant-Le-Plat-dans-lAssiette-Bordeaux-2-e1444595483358.jpg") fixed center;
+    background-size: cover;
+}
+.menu {
+    padding: 60px;
+}
+.menu .menu-image-container {
+    flex-wrap: wrap;
+    flex: 60%;
+}
+.menu .menu-image-container .image {
+    margin: 0 20px 20px 0;
+    flex: calc( 50% - 40px);
+}
+.menu .text {
+    flex: 55%;
+    padding: 40px 0 0 62px;
+}
+.menu .text h3 {
+    color: var(--coleur-h3)
+}
+.fixed-image {
+    background: url("https://www.stephaneclementphotograph.com/wp-content/uploads/2021/10/BlackBurger_MG_7904_BD.jpg") fixed center;
+    background-size: cover;
+    height: 400px;
+}
+
+footer {
+    background-color: var(--coleur-footer);
+    padding: 60px 20px;
+}
+footer .text {
+    max-width: 500px;
+    margin: auto;
+}
+footer .text h2 {
+    font-size: 19px;
+    letter-spacing: 1.9px;
+    margin-bottom: 25px;
+}
+footer .text p {
+    line-height: 27px;
+}
+footer .contact-container {
+    padding: 40px 0;
+    max-width: 1000px;
+    margin: auto;
+}
+footer .contact-container > div {
+    flex: 1;
+}
+footer .contact-container h3 {
+    font-size: 19px;
+    letter-spacing: 1.9px;
+}
+footer .social-media .links a {
+    margin: 0 10px;
+    font-size: 25px;
+}
+@media (max-width: 1200px) {
+    .menu, .about-us, .reservation {
+        padding: 60px 40px;
+    }
+    .about-us .text, .reservation .text {
+        padding: 0 32px 0 0;
+    }
+    .about-us .image-container, .reservation .image-container {
+        align-items: center;
+    }
+    .menu .text {
+        padding: 0 0 0 32px;
+    }
+}
+@media (max-width: 992px) {
+    body {
+        padding: 0;
+    }   
+    header {
+        height: calc(100vh - 10px);
+    }
+    .about-us {
+        display: block;
+        padding-top: 50px;
+    }
+    .about-us .text , .reservation .text {
+        padding: 0 0 40px;
+    }
+    .about-us .image-container .image1, .reservation .image-container .image1 {
+        margin-left: 0;
+    }
+    .menu {
+        display: block;
+        padding: 60px 20px 60px 40px;
+    }
+    .menu .text {
+        padding: 20px 20px 0 0;
+    }
+    .reservation {
+        display: block;
+        padding: 30px 20px 60px;
+    }
+}
+@media (max-width: 768px) {
+    header nav {
+        display: block;
+        text-align: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding-top: 25px;
+    }
+    header nav .burger {
+        display: block;
+    }
+    header .navigation-bar {
+        position: fixed;
+        top: 0;
+        left: -174px;
+        height: 100%;
+        background-color:var(--couleur-navbar);
+        overflow: hidden;
+        z-index: 1;
+        padding: 40px;
+    }
+    header .navigation-bar ul {
+        display: block;
+        padding-top: 40px;
+    }
+    header .navigation-bar ul li {
+        text-align: left;
+        padding: 14px 0;
+    }
+    footer .contact-container {
+        display: block;
+    }
+    footer .social-media {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 576px) {
+    h3, h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size:70px !important
+    }
+    header {
+        padding: 0;
+    }
+  
+    header nav .burger.active {
+        left: 23%;
+    }
+      .about-us, .reservation {
+        padding: 60px 20px;
+    }
+    .menu {
+        padding: 60px 0 60px 20px;
+    }
+}
