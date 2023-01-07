@@ -10,6 +10,7 @@
 }
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body {
     margin: 0;
@@ -135,6 +136,9 @@ header nav .burger.active .last {
     top: 0;
     transform: rotate(45deg);
 }
+header nav .burger.active:hover span{
+    background-color: var(--couleur-principal);
+}
 header nav .burger .hide {
     transition: 0s;
     visibility: hidden;
@@ -164,6 +168,9 @@ header .navigation-bar a {
 }
 header nav.active .navigation-bar a {
     color: var(--coleur-h3);
+}
+header nav.active .navigation-bar.show a {
+    color: var(--coleur-secondaire);
 }
 header .navigation-bar .underline {
     height: 2px;
@@ -350,7 +357,7 @@ footer .social-media .links a {
     }
     
     h2 {
-        font-size:90px
+        font-size:70px !important
     }
     header {
         padding: 0;
